@@ -1,4 +1,4 @@
-Canlı adres: web-1.ercanaziz.com
+Canlı adres: https://web-1.ercanaziz.com
 
 # Kampüs Etkinlikleri
 
