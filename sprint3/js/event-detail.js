@@ -29,27 +29,25 @@ if (!event) {
         <figcaption>Şekil 1: etkinlik afişi</figcaption>
       </figure>
 
-      <div>
-        <dl>
-          <dt>Tarih</dt>
-          <dd><time datetime="${isoTarih(event.date)}T${event.time}">${okunurTarih(event.date)}, ${event.time}</time></dd>
+      <dl>
+        <dt>Tarih</dt>
+        <dd><time datetime="${isoTarih(event.date)}T${event.time}">${okunurTarih(event.date)}, ${event.time}</time></dd>
 
-          <dt>Yer</dt>
-          <dd>${event.location}</dd>
+        <dt>Yer</dt>
+        <dd>${event.location}</dd>
 
-          <dt>Kategori</dt>
-          <dd>${event.category}</dd>
+        <dt>Kategori</dt>
+        <dd>${event.category}</dd>
 
-          <dt>Kontenjan</dt>
-          <dd>${event.capacity}</dd>
-        </dl>
+        <dt>Kontenjan</dt>
+        <dd>${event.capacity}</dd>
+      </dl>
 
-        <p>${event.description}</p>
+      <p class="detay-aciklama">${event.description}</p>
 
-        <p class="detay-butonlar">
-          <a class="buton" href="etkinlik-guncelle.html?id=${event.id}">Bu etkinliği güncelle</a>
-          <a class="buton buton-ikincil" href="etkinlikler.html">← Listeye dön</a>
-        </p>
-      </div>
+      <p class="detay-butonlar">
+        <a class="buton" href="etkinlik-guncelle.html?id=${event.id}">Bu etkinliği güncelle</a>
+        <a class="buton buton-ikincil" href="etkinlikler.html">← Listeye dön</a>
+      </p>
     </div>`;
 }

@@ -143,6 +143,11 @@ button:focus {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--bosluk-m);
+}
+
+/* Afiş ve künye birbirinden ayrı iki kart */
+.detay-icerik figure,
+.detay-icerik dl {
     background: var(--renk-kart);
     border: 1px solid var(--renk-cizgi);
     border-radius: var(--kose);
@@ -272,6 +277,12 @@ footer {
         grid-template-columns: 1fr 1fr;
         align-items: start;
     }
+
+    /* Afiş solda, künye sağda; açıklama ve butonlar iki sütunu kaplar */
+    .detay-icerik .detay-aciklama,
+    .detay-icerik .detay-butonlar {
+        grid-column: 1 / -1;
+    }
 }
 
 /* ---------- Masaüstü ---------- */
@@ -347,10 +358,16 @@ footer {
     border: 1px solid var(--renk-ana);
 }
 
+.detay-aciklama {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
 .detay-butonlar {
     display: flex;
     flex-wrap: wrap;
     gap: var(--bosluk-s);
+    margin: 0;
 }
 
 @media (min-width: 40em) {
