@@ -1,0 +1,360 @@
+/* Ercan Aziz — 2311012048 */
+:root {
+    --no: 2311012048;
+    --ton: mod(var(--no), 360);
+    --renk-ana: hsl(var(--ton) 65% 38%);
+    --renk-zemin: hsl(var(--ton) 30% 97%);
+    --renk-kart: #ffffff;
+    --renk-metin: #222222;
+    --renk-cizgi: hsl(var(--ton) 30% 85%);
+    --renk-hata: #c62828;
+    --font: system-ui;
+    --bosluk-s: 0.5rem;
+    --bosluk-m: 1rem;
+    --bosluk-l: 2rem;
+    --kose: 8px;
+}
+
+/* ---------- Genel ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--renk-metin);
+    background: var(--renk-zemin);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--renk-ana);
+}
+
+main {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: var(--bosluk-m);
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    margin: 0 0 var(--bosluk-s);
+}
+
+/* ---------- Başlık ve menü ---------- */
+header {
+    background: var(--renk-ana);
+    color: #ffffff;
+    padding: var(--bosluk-m);
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin: 0 0 var(--bosluk-s);
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--bosluk-s);
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: var(--bosluk-s) var(--bosluk-m);
+    border-radius: var(--kose);
+    background: rgba(255, 255, 255, 0.15);
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+}
+
+nav a:hover,
+nav a:focus {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* ---------- Kartlar ---------- */
+.kartlar {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--bosluk-m);
+    margin-bottom: var(--bosluk-l);
+}
+
+.kart {
+    background: var(--renk-kart);
+    border: 1px solid var(--renk-cizgi);
+    border-radius: var(--kose);
+    padding: var(--bosluk-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--bosluk-s);
+}
+
+.kart h2 {
+    font-size: 1.15rem;
+    color: var(--renk-ana);
+}
+
+.kart p {
+    margin: 0;
+}
+
+.kart .detay {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* ---------- Buton görünümlü linkler ve butonlar ---------- */
+.buton,
+button {
+    display: inline-block;
+    font: inherit;
+    background: var(--renk-ana);
+    color: #ffffff;
+    border: 0;
+    border-radius: var(--kose);
+    padding: var(--bosluk-s) var(--bosluk-m);
+    min-height: 44px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.buton:hover,
+.buton:focus,
+button:hover,
+button:focus {
+    filter: brightness(1.15);
+}
+
+/* ---------- Detay sayfası ---------- */
+.detay-icerik {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--bosluk-m);
+    background: var(--renk-kart);
+    border: 1px solid var(--renk-cizgi);
+    border-radius: var(--kose);
+    padding: var(--bosluk-m);
+}
+
+figure {
+    margin: 0;
+}
+
+figure img {
+    width: 100%;
+    border-radius: var(--kose);
+    border: 1px solid var(--renk-cizgi);
+}
+
+figcaption {
+    font-size: 0.9rem;
+    color: #555555;
+    margin-top: var(--bosluk-s);
+}
+
+dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: var(--bosluk-s) var(--bosluk-m);
+}
+
+dt {
+    font-weight: bold;
+    color: var(--renk-ana);
+}
+
+dd {
+    margin: 0;
+}
+
+/* ---------- Formlar ---------- */
+form {
+    background: var(--renk-kart);
+    border: 1px solid var(--renk-cizgi);
+    border-radius: var(--kose);
+    padding: var(--bosluk-m);
+    max-width: 30rem;
+}
+
+form p {
+    margin: 0 0 var(--bosluk-m);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+input,
+select,
+textarea {
+    font: inherit;
+    width: 100%;
+    padding: var(--bosluk-s);
+    min-height: 44px;
+    border: 1px solid var(--renk-cizgi);
+    border-radius: var(--kose);
+    background: #ffffff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--renk-ana);
+    outline-offset: 1px;
+}
+
+/* Kullanıcı göndermeyi deneyince hatalı alan kırmızı olur */
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid,
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+    border: 2px solid var(--renk-hata);
+    background: #fff5f5;
+}
+
+input:user-invalid + .hata,
+select:user-invalid + .hata {
+    display: block;
+}
+
+.hata {
+    display: block;
+    color: var(--renk-hata);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+/* ---------- Alt bilgi ---------- */
+footer {
+    text-align: center;
+    padding: var(--bosluk-m);
+    font-size: 0.9rem;
+    color: #555555;
+}
+
+/* ---------- Geniş ekran (tablet ve üstü) ---------- */
+@media (min-width: 40em) {
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--bosluk-m);
+        padding: var(--bosluk-m) var(--bosluk-l);
+    }
+
+    header h1 {
+        margin: 0;
+    }
+
+    .kartlar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .detay-icerik {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+}
+
+/* ---------- Masaüstü ---------- */
+@media (min-width: 60em) {
+    .kartlar.uc-sutun {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ---------- Sprint 3: filtre, mesaj kutuları ---------- */
+.filtre {
+    max-width: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--bosluk-m);
+    margin-bottom: var(--bosluk-s);
+}
+
+.filtre p {
+    margin: 0;
+}
+
+.sonuc {
+    margin: 0 0 var(--bosluk-m);
+    color: #555555;
+}
+
+.sonuc.bos {
+    color: var(--renk-hata);
+    font-weight: bold;
+}
+
+.kutu {
+    border-radius: var(--kose);
+    padding: var(--bosluk-m);
+    margin-top: var(--bosluk-m);
+    border: 1px solid;
+}
+
+.kutu p {
+    margin: 0 0 var(--bosluk-s);
+}
+
+.kutu-hata {
+    background: #fdecea;
+    border-color: var(--renk-hata);
+    color: #7a1a1a;
+}
+
+.kutu-basari {
+    background: #e8f5e9;
+    border-color: #2e7d32;
+    color: #1b5e20;
+}
+
+.kutu pre {
+    background: #ffffff;
+    border: 1px solid var(--renk-cizgi);
+    border-radius: var(--kose);
+    padding: var(--bosluk-s);
+    overflow-x: auto;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.form-mesaj {
+    max-width: 30rem;
+}
+
+.buton-ikincil {
+    background: transparent;
+    color: var(--renk-ana);
+    border: 1px solid var(--renk-ana);
+}
+
+.detay-butonlar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--bosluk-s);
+}
+
+@media (min-width: 40em) {
+    .filtre {
+        grid-template-columns: 2fr 1fr;
+    }
+}

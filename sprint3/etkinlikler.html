@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kampüs Etkinlikleri - Tüm Etkinlikler</title>
+    <link rel="stylesheet" href="css/2311012048.css">
+    <script type="module" src="js/event-list.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Tüm Etkinlikler</h1>
+        <nav>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="etkinlikler.html">Etkinlikler</a>
+            <a href="etkinlik-ekle.html">Ekle</a>
+        </nav>
+    </header>
+
+    <main>
+        <form id="filtre-formu" class="filtre">
+            <p>
+                <label for="arama">Etkinlik ara</label>
+                <input type="search" id="arama" name="arama" placeholder="atölye, kariyer...">
+            </p>
+            <p>
+                <label for="kategori-filtre">Kategori</label>
+                <select id="kategori-filtre" name="kategori-filtre">
+                    <option value="">Tümü</option>
+                </select>
+            </p>
+        </form>
+        <p id="sonuc" class="sonuc" aria-live="polite"></p>
+
+        <section id="etkinlik-listesi" class="kartlar uc-sutun"></section>
+    </main>
+
+    <footer>
+        <p>Ercan Aziz · 2311012048 · 2026</p>
+    </footer>
+</body>
+</html>
