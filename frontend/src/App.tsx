@@ -30,10 +30,8 @@ function App() {
     setPage(next);
     setSelectedId(id);
   }
-
   const filtered = filterByCategory(searchEvents(events, searchText), category);
   const selected = selectedId ? findEventById(events, selectedId) : undefined;
-
   const titles: Record<PageName, string> = {
     home: "Kampüs Etkinlikleri",
     events: "Tüm Etkinlikler",
@@ -42,12 +40,10 @@ function App() {
     update: "Etkinlik Güncelle",
   };
   const title = titles[page];
-
   useEffect(() => {
     document.title =
       page === "home" ? "Kampüs Etkinlikleri" : `Kampüs Etkinlikleri — ${title}`;
   }, [page, title]);
-
   return (
     <>
       <div className="site-ust">
@@ -106,7 +102,6 @@ function App() {
           <EventForm onSubmit={() => window.scrollTo(0, 0)} />
         )}
       </main>
-
       <Footer />
     </>
   );
