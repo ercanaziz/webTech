@@ -1,11 +1,10 @@
-import type { Category } from "../../types/campus-event";
+import { categories } from "../../data/events";
 
 interface EventFormProps {
-  categories: Category[];
   onSubmit: () => void;
 }
 
-function EventForm({ categories, onSubmit }: EventFormProps) {
+function EventForm({ onSubmit }: EventFormProps) {
   return (
     <>
       <p className="sonuc">

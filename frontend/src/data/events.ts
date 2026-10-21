@@ -75,3 +75,6 @@ export const events: CampusEvent[] = [
     image: "/afis.svg",
   },
 ];
+
+// Kategori seçenekleri veriden, her biri bir kez
+export const categories = [...new Set(events.map((e) => e.category))];

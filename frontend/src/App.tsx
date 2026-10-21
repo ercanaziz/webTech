@@ -2,7 +2,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import type { Category } from "./types/campus-event";
 import type { PageName } from "./types/page";
-import { events } from "./data/events";
+import { events, categories } from "./data/events";
 import {
   searchEvents,
   filterByCategory,
@@ -16,7 +16,6 @@ import EventFilter from "./components/events/EventFilter";
 import EventDetail from "./components/events/EventDetail";
 import EventForm from "./components/forms/EventForm";
 
-const categories = [...new Set(events.map((e) => e.category))];
 const upcoming = [...events]
   .sort((a, b) => a.date.localeCompare(b.date))
   .slice(0, 2);
@@ -104,7 +103,7 @@ function App() {
         )}
 
         {(page === "add" || page === "update") && (
-          <EventForm categories={categories} onSubmit={() => window.scrollTo(0, 0)} />
+          <EventForm onSubmit={() => window.scrollTo(0, 0)} />
         )}
       </main>
 
