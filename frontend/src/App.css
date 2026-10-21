@@ -54,18 +54,26 @@ h1, h2, h3 {
 header {
     background: var(--renk-ana);
     color: #ffffff;
-    padding: var(--bosluk-m);
+    padding: var(--bosluk-m) var(--bosluk-m) var(--bosluk-s);
 }
 
 header h1 {
     font-size: 1.5rem;
-    margin: 0 0 var(--bosluk-s);
+    margin: 0;
 }
 
+header p {
+    margin: var(--bosluk-s) 0 0;
+    opacity: 0.9;
+}
+
+/* Menü ayrı bileşen; başlıkla aynı renkli bandın devamı */
 nav {
     display: flex;
     flex-wrap: wrap;
     gap: var(--bosluk-s);
+    background: var(--renk-ana);
+    padding: var(--bosluk-s) var(--bosluk-m) var(--bosluk-m);
 }
 
 nav a {
@@ -258,15 +266,11 @@ footer {
 /* ---------- Geniş ekran (tablet ve üstü) ---------- */
 @media (min-width: 40em) {
     header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: var(--bosluk-m);
-        padding: var(--bosluk-m) var(--bosluk-l);
+        padding: var(--bosluk-m) var(--bosluk-l) var(--bosluk-s);
     }
 
-    header h1 {
-        margin: 0;
+    nav {
+        padding: var(--bosluk-s) var(--bosluk-l) var(--bosluk-m);
     }
 
     .kartlar {

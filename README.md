@@ -9,7 +9,7 @@ Web Teknolojileri dersi proje reposu. Her sprint kendi klasöründe; Vercel'de R
 | `sprint1/` | Yalnızca HTML, beş sayfa |
 | `sprint2/` | CSS ve responsive tasarım (`css/2311012048.css`) |
 | `sprint3/` | JavaScript ve DOM: `js/data.js` verisi, arama ve kategori filtresi, `?id=` ile detay, form doğrulama |
-| `frontend/` | Sprint 4: Vite + React + TypeScript. Beş sayfa tek `App.tsx` içinde, sayfa geçişi state ile |
+| `frontend/` | Sprint 4–5: Vite + React + TypeScript. State `App.tsx`'te, görünüm `components/` altındaki bileşenlerde; sayfa geçişi state ile |
 
 ## frontend/ dosya yapısı
 
@@ -22,9 +22,14 @@ Web Teknolojileri dersi proje reposu. Her sprint kendi klasöründe; Vercel'de R
 | `vite.config.ts` | Vite ayarları ve React eklentisi. |
 | `index.html` | Tek HTML dosyası; içinde React'in çizim yaptığı boş `div#root`. |
 | `src/main.tsx` | React'i başlatır, `App` bileşenini `root` içine çizer. |
-| `src/App.tsx` | Uygulamanın ana bileşeni; beş sayfanın hepsi, menü, state ve `useEffect` burada. |
+| `src/App.tsx` | Uygulamanın ana bileşeni; state'ler, hesaplanan değerler, `go()` ve dört sayfa bloğu. Görünüm bileşenlere devredildi. |
 | `src/App.css` | Uygulamanın stilleri; Sprint 3'teki `2311012048.css` buraya taşındı. |
 | `src/index.css` | Tüm sayfaya genel stil; bu sprintte boş. |
+| `src/types/page.ts` | `PageName` tipi: beş sayfanın adı. |
+| `src/utils/format-date.ts` | `formatDate`: ISO tarihi "12 Ekim 2026" biçimine çevirir. |
+| `src/components/layout/` | `Header` (title, text), `Navigation` (current, onNavigate), `Footer` (props yok). |
+| `src/components/events/` | `EventCard` (event, onShowDetail), `EventList` (events, onShowDetail, emptyText), `EventFilter` (arama ve kategori, iki callback), `EventDetail` (event, onBack, onEdit). |
+| `src/components/forms/` | `EventForm` (onSubmit); Ekle ve Güncelle aynı formu kullanır. |
 | `src/types/campus-event.ts` | `Category` union tipi ve `CampusEvent` arayüzü: bir etkinlik neye benzer. |
 | `src/data/events.ts` | `CampusEvent[]` tipinde 6 etkinlik kaydı. |
 | `src/utils/filter-events.ts` | Saf fonksiyonlar: `searchEvents`, `filterByCategory`, `findEventById`. |
