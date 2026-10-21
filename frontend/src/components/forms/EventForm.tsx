@@ -9,7 +9,7 @@ function EventForm({ categories, onSubmit }: EventFormProps) {
   return (
     <>
       <p className="sonuc">
-        Bu sprintte form sadece görünüm; kayıt yapılmaz.
+        
       </p>
       <form
         className="form"

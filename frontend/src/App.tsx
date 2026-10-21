@@ -51,15 +51,17 @@ function App() {
 
   return (
     <>
-      <Header
-        title={title}
-        text={
-          page === "home"
-            ? "Fakültedeki seminer, atölye ve söyleşileri tek yerden takip edin."
-            : undefined
-        }
-      />
-      <Navigation current={page} onNavigate={go} />
+      <div className="site-ust">
+        <Header
+          title={title}
+          text={
+            page === "home"
+              ? "Fakültedeki seminer, atölye ve söyleşileri tek yerden takip edin."
+              : undefined
+          }
+        />
+        <Navigation current={page} onNavigate={go} />
+      </div>
 
       <main>
         {page === "home" && (

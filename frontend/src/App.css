@@ -51,9 +51,13 @@ h1, h2, h3 {
 }
 
 /* ---------- Başlık ve menü ---------- */
-header {
+/* Başlık + menü: tek renkli bant, geniş ekranda aynı satır */
+.site-ust {
     background: var(--renk-ana);
     color: #ffffff;
+}
+
+header {
     padding: var(--bosluk-m) var(--bosluk-m) var(--bosluk-s);
 }
 
@@ -72,7 +76,6 @@ nav {
     display: flex;
     flex-wrap: wrap;
     gap: var(--bosluk-s);
-    background: var(--renk-ana);
     padding: var(--bosluk-s) var(--bosluk-m) var(--bosluk-m);
 }
 
@@ -265,12 +268,17 @@ footer {
 
 /* ---------- Geniş ekran (tablet ve üstü) ---------- */
 @media (min-width: 40em) {
-    header {
-        padding: var(--bosluk-m) var(--bosluk-l) var(--bosluk-s);
+    .site-ust {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--bosluk-m);
+        padding: var(--bosluk-m) var(--bosluk-l);
     }
 
+    header,
     nav {
-        padding: var(--bosluk-s) var(--bosluk-l) var(--bosluk-m);
+        padding: 0;
     }
 
     .kartlar {
